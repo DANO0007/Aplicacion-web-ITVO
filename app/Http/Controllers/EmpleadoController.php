@@ -149,7 +149,17 @@ class EmpleadoController extends Controller
 
     public function empleadoxml(){
         $empleados = Empleado::all();
-        return response()->xml($empleados);
+     
+      $prueba;
+      $jsonstr = json_decode($empleados, true);
+
+       foreach($empleados as $empleado){
+        $prueba = $empleado;
+      //array_push($prueba,(object)$empleado);
+     // print_r($empleado);
+      }
+      
+        return response()->xml($prueba);
     }
 
    /* public function empleadoxml(){
