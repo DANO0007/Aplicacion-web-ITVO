@@ -57,6 +57,11 @@
         @endforeach
     </tbody>
 </table>
+
+<a href="{{ url('/json')}}"class="btn btn-success" > Obtener json </a>
+
+<a href="{{ url('/xml')}}"class="btn btn-success" > Obtener xml </a>
+
 {!! $empleados->links()!!}
 </div>
 @endsection

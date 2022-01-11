@@ -25,5 +25,9 @@ Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 
 Route::group(['middleware'=>'auth'], function () {
 
-    Route::get('/home', [EmpleadoController::class, 'index'])->name('home'); 
+Route::get('/home', [EmpleadoController::class, 'index'])->name('home'); 
+
+Route::get('/json', [EmpleadoController::class, 'empleadojson'])->name('json');
+
+Route::get('/xml', [EmpleadoController::class, 'empleadoxml'])->name('xml');
 });

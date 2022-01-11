@@ -141,4 +141,26 @@ class EmpleadoController extends Controller
         
         return redirect('empleado')->with('mensaje','Empleado borrado');
     }
+
+    public function empleadojson(){
+        $empleados = Empleado::all();
+        return response()->json($empleados);
+    }
+
+    public function empleadoxml(){
+        $empleados = Empleado::all();
+        return response()->xml($empleados);
+    }
+
+   /* public function empleadoxml(){
+        $empleados = Empleado::all();
+        $arregloempleados=[];
+        foreach($empleados as $empleado){
+            array_push($arregloempleados, $empleado);
+        }
+        
+        return response()->xml($arregloempleados);
+
+       
+    }*/
 }
